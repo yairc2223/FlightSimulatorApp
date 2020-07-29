@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="FlightSimulator.Views.Dashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulator.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="1000">
+    <Canvas HorizontalAlignment="Center" Height="450" Margin="0,0,0,0" VerticalAlignment="Center" Width="1000">
+        <Label x:Name="LabelInternalPitchDeg" Content="Internal Pitch Deg"  Height="55" Canvas.Left="46" Canvas.Top="68" Width="auto" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="LabelInternalRollDeg" Content="Internal Roll Deg" Height="55" Canvas.Left="46" Canvas.Top="128" Width="auto" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="LabelGpsGroundspeed" Content="GPS Ground Speed" Height="55" Canvas.Left="46" Canvas.Top="188" Width="auto" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="LabelverSpeed" Content="GPS Vertical Speed" Height="55" Canvas.Left="46" Canvas.Top="248" Width="auto" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="LabelHeaddeg" Content="Heading Degree" Height="55" Canvas.Left="560" Canvas.Top="68" Width="192" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="LabalAirSpeed" Content="Air Speed Indicator" Height="55" Canvas.Left="560" Canvas.Top="128" Width="368" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="LabelGpsAltitude" Content="GPS Altitude" Height="55" Canvas.Left="560" Canvas.Top="188" Width="247" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="LabelAltimeter" Content="Altimeter" Height="55" Canvas.Left="560" Canvas.Top="248" Width="192" FontSize="36" FontWeight="Bold"/>
+
+        <Label x:Name="LabelInternalPitchDegval" Content="0.0"  Height="55" Canvas.Left="450" Canvas.Top="68" Width="auto" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="LabelInternalRollDegval" Content="0.0" Height="55" Canvas.Left="450" Canvas.Top="128" Width="auto" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="LabelGpsGroundspeedval" Content="0.0" Height="55" Canvas.Left="450" Canvas.Top="188" Width="auto" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="LabelverSpeedval" Content="0.0" Height="55" Canvas.Left="450" Canvas.Top="248" Width="auto" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="LabelHeaddegval" Content="0.0" Height="55" Canvas.Left="900" Canvas.Top="68" Width="192" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="LabalAirSpeedval" Content="0.0" Height="55" Canvas.Left="900" Canvas.Top="128" Width="368" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="LabelGpsAltitudeval" Content="0.0" Height="55" Canvas.Left="900" Canvas.Top="188" Width="247" FontSize="36" FontWeight="Bold"/>
+        <Label x:Name="LabelAltimeterval" Content="0.0" Height="55" Canvas.Left="900" Canvas.Top="248" Width="192" FontSize="36" FontWeight="Bold"/>
+
+    </Canvas>
+</UserControl>
