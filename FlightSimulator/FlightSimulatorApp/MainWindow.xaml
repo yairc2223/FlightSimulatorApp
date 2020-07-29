@@ -1,0 +1,51 @@
+﻿<Window x:Class="FlightSimulator.MainWindow" ResizeMode="NoResize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:FlightSimulator.Views"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        xmlns:local="clr-namespace:FlightSimulator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="660" Width="1100">
+    <Grid>
+        <m:Map Mode="Road" Height="400" Width="700"   
+               CredentialsProvider="cZFZ0oKxXHqafDHNf76E~e2mdJLNuwH2Qe-5fOw7uog~ArBpDkuXqQDOQ_ZUkfvwdwunz54CArDbbhqpnpwJdHuoOQvmdAMysmBZEa98v_y-"  
+               Margin="23,216,371,15" >
+            <m:Pushpin Location="{Binding Path=map.VM_Center}" />
+        </m:Map>
+        <Canvas HorizontalAlignment="Center" Height="231" Margin="10,-20,375,420" VerticalAlignment="Center" Width="709">
+            <Label x:Name="LabelInternalPitchDeg" Content="Internal Pitch Deg:"  Height="auto" Canvas.Left="26" Canvas.Top="48" Width="auto" FontSize="12" FontWeight="Bold"/>
+            <Label x:Name="LabelInternalRollDeg" Content="Internal Roll Deg:" Height="auto" Canvas.Left="26" Canvas.Top="98" Width="auto" FontSize="12" FontWeight="Bold"/>
+            <Label x:Name="LabelGpsGroundspeed" Content="GPS Ground Speed:" Height="auto" Canvas.Left="26" Canvas.Top="148" Width="auto" FontSize="12" FontWeight="Bold"/>
+            <Label x:Name="LabelverSpeed" Content="GPS Vertical Speed:" Height="auto" Canvas.Left="26" Canvas.Top="198" Width="auto" FontSize="12" FontWeight="Bold"/>
+            <Label x:Name="LabelHeaddeg" Content="Heading Degree:" Height="auto" Canvas.Left="410" Canvas.Top="48" Width="192" FontSize="12" FontWeight="Bold"/>
+            <Label x:Name="LabalAirSpeed" Content="Air Speed Indicator:" Height="auto" Canvas.Left="410" Canvas.Top="98" Width="368" FontSize="12" FontWeight="Bold"/>
+            <Label x:Name="LabelGpsAltitude" Content="Altitude:" Height="auto" Canvas.Left="410" Canvas.Top="148" Width="247" FontSize="12" FontWeight="Bold"/>
+            <Label x:Name="LabelAltimeter" Content="Altimeter:" Height="auto" Canvas.Left="410" Canvas.Top="198" Width="192" FontSize="12" FontWeight="Bold"/>
+
+
+            <Label x:Name="LabelInternalPitchDegval" Content="{Binding Path = dash.VM_PitchDeg}"  Height="auto" Canvas.Left="230" Canvas.Top="48" Width="auto" FontSize="12" FontWeight="Bold"/>
+            <Label x:Name="LabelInternalRollDegval" Content="{Binding Path = dash.VM_RollDeg}" Height="auto" Canvas.Left="230" Canvas.Top="98" Width="auto" FontSize="12" FontWeight="Bold"/>
+            <Label x:Name="LabelGpsGroundspeedval" Content="{Binding Path = dash.VM_GroungSpeed}" Height="auto" Canvas.Left="230" Canvas.Top="148" Width="auto" FontSize="12" FontWeight="Bold"/>
+            <Label x:Name="LabelverSpeedval" Content="{Binding Path = dash.VM_VerticalSpeed}" Height="auto" Canvas.Left="230" Canvas.Top="198" Width="auto" FontSize="12" FontWeight="Bold"/>
+            <Label x:Name="LabelHeaddegval" Content="{Binding Path = dash.VM_HeadingDeg}" Height="auto" Canvas.Left="580" Canvas.Top="48" Width="auto" FontSize="12" FontWeight="Bold"/>
+            <Label x:Name="LabalAirSpeedval" Content="{Binding Path = dash.VM_AirSpeed}" Height="auto" Canvas.Left="580" Canvas.Top="98" Width="auto" FontSize="12" FontWeight="Bold"/>
+            <Label x:Name="LabelGpsAltitudeval" Content="{Binding Path = dash.VM_Altitude}" Height="auto" Canvas.Left="580" Canvas.Top="148" Width="auto" FontSize="12" FontWeight="Bold"/>
+            <Label x:Name="LabelAltimeterval" Content="{Binding Path = dash.VM_Altimeter}" Height="auto" Canvas.Left="580" Canvas.Top="198" Width="auto" FontSize="12" FontWeight="Bold"/>
+
+
+        </Canvas>
+        <Button x:Name="ConnectButton" Content="Connect" HorizontalAlignment="Left" Height="48" Margin="734,28,0,0" VerticalAlignment="Top" Width="160" Click="ConnectButton_Click"/>
+        <Button x:Name="DisconnectButton" Content="Diconnect" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="160" Canvas.Left="712" Canvas.Top="160" Margin="734,97,0,0" RenderTransformOrigin="0.347,0.562" Click="DisconnectButton_Click_1"/>
+        <uc:Controls x:Name="controls" HorizontalAlignment="Left" Margin="749,255,-0.4,0" VerticalAlignment="Top" Height="361" Width="319"/>
+        <TextBlock HorizontalAlignment="Left" Height="62" Margin="766,188,0,0" TextWrapping="Wrap" Text="{Binding Path=dash.VM_Status}" Background='AliceBlue' VerticalAlignment="Top" Width="302" Cursor="Arrow" Foreground="Blue"/>
+        <Label Content="Monitor:" HorizontalAlignment="Left" Height="auto" Margin="766,157,0,0" VerticalAlignment="Top" Width="auto" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.058,0.5"/>
+        <TextBlock x:Name="IPLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="IP :" VerticalAlignment="Top" Margin="921,46,0,0" FontWeight="Bold" FontSize="16" Width="31"/>
+        <TextBlock x:Name="PortLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Port :" VerticalAlignment="Top" Margin="899,96,0,0" FontWeight="Bold" FontSize="16" Width="60"/>
+        <TextBox x:Name="IPTextbox" HorizontalAlignment="Left" Height="27" Margin="968,46,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" Width="104"/>
+        <TextBox x:Name="PortTextbox" HorizontalAlignment="Left" Height="27" Margin="968,97,0,0" TextWrapping="Wrap" Text="5402" VerticalAlignment="Top" Width="84"/>
+
+    </Grid>
+
+</Window>
